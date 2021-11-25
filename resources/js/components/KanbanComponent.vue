@@ -19,6 +19,14 @@
               {{ task.description }}
             </p>
           </div>
+          <AddTaskForm v-if="newTaskForStatus === status.id" :status-id="status.id" v-on:task-added="handleTaskAdded" v-on:task-canceled="closeAddTaskForm"/>
+          <div v-show="!status.tasks.length && newTaskForStatus !== status.id" class="flex-1 p-4 flex flex-col items-center justify-center">
+            <span class="text-gray-600">No tasks yet</span>
+            <button class="mt-1 text-sm text-orange-600 hover:underline" @click="openAddTaskForm(status.id)">
+              Add one
+            </button>
+          </div>
+          <!-- ./No Tasks -->
         </div>
         <div v-show="!status.tasks.length && newTaskForStatus !== status.id" class="flex-1 p-4 flex flex-col items-center justify-center">
           <span class="text-gray-600">No tasks yet</span>
@@ -32,18 +40,47 @@
 </template>
 
 <script>
+import AddTaskForm from "./AddTaskForm"; //コンポーネントをインポートする
+
 export default {
+  components: { AddTaskForm }, // 登録
+
   props: {
       initialData: Array
   },
   data() {
     return {
       statuses: [],
+
+      newTaskForStatus: 0 // 追加するステータスのID
     };
   },
   mounted() {
     // ステータスを「クローン」して、変更時にプロップを変更しないように
     this.statuses = JSON.parse(JSON.stringify(this.initialData));
   },
+  methods: {
+    // statusIdを設定し、フォームを表示
+    openAddTaskForm(statusId) {
+      this.newTaskForStatus = statusId;
+    },
+    // statusIdをリセットしてフォームを閉じる
+    closeAddTaskForm() {
+      this.newTaskForStatus = 0;
+    },
+    // ボードの正しい列にカードを追加
+    handleTaskAdded(newTask) {
+      // Find the index of the status where we should add the task
+      const statusIndex = this.statuses.findIndex(
+        status => status.id === newTask.status_id
+      );
+
+      // 新しく作成しカードをボードに追加
+      this.statuses[statusIndex].tasks.push(newTask);
+
+      // AddTaskFormを閉じる
+      this.closeAddTaskForm();
+    },
+  }
 };
 </script>
