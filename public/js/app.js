@@ -2508,21 +2508,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
- //コンポーネントをインポートする
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
-    AddTaskForm: _AddTaskForm__WEBPACK_IMPORTED_MODULE_0__["default"],
     draggable: (vuedraggable__WEBPACK_IMPORTED_MODULE_2___default()),
     CreditCardIcon: vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.CreditCardIcon,
+    EditIcon: vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.EditIcon,
     Trash2Icon: vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.Trash2Icon,
-    AddStatusModal: _AddStatusModal__WEBPACK_IMPORTED_MODULE_1__["default"],
-    EditIcon: vue_feather_icons__WEBPACK_IMPORTED_MODULE_3__.EditIcon
+    AddTaskForm: _AddTaskForm__WEBPACK_IMPORTED_MODULE_0__["default"],
+    AddStatusModal: _AddStatusModal__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  // 登録
   props: {
     initialData: Array
   },
@@ -2530,7 +2537,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       statuses: [],
       newTaskForStatus: 0,
-      // 追加するステータスのID
       showModal: false,
       maxOrderNo: 0
     };
@@ -2552,15 +2558,13 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    // ステータスを「クローン」して、変更時にプロップを変更しないように
+    // ステータスを「複製」して、変更時にプロップを変更しないようにします
     this.statuses = JSON.parse(JSON.stringify(this.initialData));
   },
   methods: {
-    // statusIdを設定し、フォームを表示
     openAddTaskForm: function openAddTaskForm(statusId) {
       this.newTaskForStatus = statusId;
     },
-    // statusIdをリセットしてフォームを閉じる
     closeAddTaskForm: function closeAddTaskForm() {
       this.newTaskForStatus = 0;
     },
@@ -2593,9 +2597,8 @@ __webpack_require__.r(__webpack_exports__);
       this.closeStatusModal();
       this.statuses.push(newStatus);
     },
-    // ボードの正しい列にカードを追加
     handleTaskAdded: function handleTaskAdded(newTask) {
-      // Find the index of the status where we should add the task
+      // タスクを追加する必要があるステータスのインデックスを見つけます
       var statusIndex = this.statuses.findIndex(function (status) {
         return status.id === newTask.status_id;
       }); // 新しく作成したタスクを列に追加します
@@ -7110,6 +7113,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n.overlay {\n    background: rgba(0, 0, 0, .8);\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 900;\n    transition: all .5s ease;\n}\n.panel {\n    width: 300px;\n    height: 250px;\n    background: #fff;\n    padding: 20px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    margin-left: -150px;\n    margin-top: -100px;\n    transition: all .3s ease;\n}\n.modal-enter, .modal-leave-active {\n    opacity: 0;\n}\n.modal-enter .panel, .modal-leave-active .panel{\n    top: -200px;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.status-drag[data-v-5ae9562a] {\n    transition: transform 0.5s;\n    transition-property: all;\n}\n.flex[data-v-5ae9562a] {\n    display: -moz-flex;\n    display: -ms-flex;\n    display: -o-flex;\n    display: flex;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41894,6 +41921,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_style_index_0_id_5ae9562a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css& */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css&");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_style_index_0_id_5ae9562a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_style_index_0_id_5ae9562a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
@@ -57045,23 +57102,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _KanbanComponent_vue_vue_type_template_id_5ae9562a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./KanbanComponent.vue?vue&type=template&id=5ae9562a& */ "./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&");
+/* harmony import */ var _KanbanComponent_vue_vue_type_template_id_5ae9562a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true& */ "./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true&");
 /* harmony import */ var _KanbanComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./KanbanComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/KanbanComponent.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _KanbanComponent_vue_vue_type_style_index_0_id_5ae9562a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css& */ "./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
+;
 
 
 /* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _KanbanComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _KanbanComponent_vue_vue_type_template_id_5ae9562a___WEBPACK_IMPORTED_MODULE_0__.render,
-  _KanbanComponent_vue_vue_type_template_id_5ae9562a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _KanbanComponent_vue_vue_type_template_id_5ae9562a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render,
+  _KanbanComponent_vue_vue_type_template_id_5ae9562a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
-  null,
+  "5ae9562a",
   null
   
 )
@@ -57150,6 +57209,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css& ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_10_0_rules_0_use_2_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_style_index_0_id_5ae9562a_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css& */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[1]!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-10[0].rules[0].use[2]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=style&index=0&id=5ae9562a&scoped=true&lang=css&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/AddStatusModal.vue?vue&type=template&id=5a4e30a5&":
 /*!***********************************************************************************!*\
   !*** ./resources/js/components/AddStatusModal.vue?vue&type=template&id=5a4e30a5& ***!
@@ -57201,19 +57273,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a& ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true& ***!
+  \************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_template_id_5ae9562a___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_template_id_5ae9562a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_template_id_5ae9562a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_template_id_5ae9562a_scoped_true___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_template_id_5ae9562a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./KanbanComponent.vue?vue&type=template&id=5ae9562a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_KanbanComponent_vue_vue_type_template_id_5ae9562a_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true&");
 
 
 /***/ }),
@@ -57609,10 +57681,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&":
-/*!***************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a& ***!
-  \***************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/KanbanComponent.vue?vue&type=template&id=5ae9562a&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -57648,7 +57720,7 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("\n        Add Status +\n      ")]
+            [_vm._v("\n                Add Status ＋\n            ")]
           ),
           _vm._v(" "),
           _vm.showModal
@@ -57677,17 +57749,17 @@ var render = function () {
           _vm._b(
             {
               staticClass: "flex-1 overflow-hidden",
-              on: { end: _vm.handleTaskMoved },
+              on: { end: _vm.handleStatusMoved },
               model: {
-                value: _vm.status.tasks,
+                value: _vm.statuses,
                 callback: function ($$v) {
-                  _vm.$set(_vm.status, "tasks", $$v)
+                  _vm.statuses = $$v
                 },
-                expression: "status.tasks",
+                expression: "statuses",
               },
             },
             "draggable",
-            _vm.taskDragOptions,
+            _vm.statusDragOptions,
             false
           ),
           [
@@ -57695,7 +57767,7 @@ var render = function () {
               "transition-group",
               {
                 staticClass:
-                  "flex-1 flex flex-col h-full overflow-x-hidden overflow-y-auto rounded shadow-xs",
+                  "flex-1 flex h-full overflow-x-hidden overflow-y-auto rounded shadow-xs",
                 attrs: { tag: "div" },
               },
               _vm._l(_vm.statuses, function (status) {
@@ -57725,9 +57797,9 @@ var render = function () {
                               { staticClass: "font-medium text-white" },
                               [
                                 _vm._v(
-                                  "\n                " +
+                                  "\n                                " +
                                     _vm._s(status.title) +
-                                    "\n              "
+                                    "\n                            "
                                 ),
                               ]
                             ),
@@ -57827,9 +57899,9 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\n                        " +
+                                                  "\n                                                " +
                                                     _vm._s(task.title) +
-                                                    "\n                      "
+                                                    "\n                                            "
                                                 ),
                                               ]
                                             ),
@@ -57864,9 +57936,9 @@ var render = function () {
                                           { staticClass: "text-gray-700" },
                                           [
                                             _vm._v(
-                                              "\n                      " +
+                                              "\n                                            " +
                                                 _vm._s(task.description) +
-                                                "\n                    "
+                                                "\n                                        "
                                             ),
                                           ]
                                         ),
@@ -57898,8 +57970,10 @@ var render = function () {
                               },
                               [
                                 _c("span", { staticClass: "text-gray-600" }, [
-                                  _vm._v("No tasks yet"),
+                                  _vm._v("タスクがありません"),
                                 ]),
+                                _vm._v(" "),
+                                _c("br"),
                                 _vm._v(" "),
                                 _c(
                                   "button",
@@ -57914,7 +57988,7 @@ var render = function () {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                  Add one\n                "
+                                      "\n                                    Add Task ＋\n                                "
                                     ),
                                   ]
                                 ),
