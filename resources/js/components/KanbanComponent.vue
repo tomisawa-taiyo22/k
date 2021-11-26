@@ -7,7 +7,7 @@
           class="bg-blue-500 border border-blue-500 px-6 py-2 text-white hover:bg-blue-400 rounded"
           @click="showModal = true"
         >
-          Add Status ＋
+          ステータスの追加 ＋
         </button>
 
         <AddStatusModal
@@ -116,7 +116,7 @@
                     class="mt-1 text-sm text-orange-600 hover:underline"
                     @click="openAddTaskForm(status.id)"
                   >
-                    Add Task ＋
+                    タスクを追加 ＋
                   </button>
                 </div>
                 <!-- ./No Tasks -->

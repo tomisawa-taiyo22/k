@@ -57719,7 +57719,7 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("\n        Add Status ＋\n      ")]
+            [_vm._v("\n        ステータスの追加 ＋\n      ")]
           ),
           _vm._v(" "),
           _vm.showModal
@@ -57987,7 +57987,7 @@ var render = function () {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                  Add Task ＋\n                "
+                                      "\n                  タスクを追加 ＋\n                "
                                     ),
                                   ]
                                 ),
