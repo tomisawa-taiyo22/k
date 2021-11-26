@@ -27,12 +27,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('tasks', '\App\Http\Controllers\TaskController@index')->name('tasks.index');
     Route::post('tasks', '\App\Http\Controllers\TaskController@store')->name('tasks.store');
     Route::put('tasks/sync', '\App\Http\Controllers\TaskController@sync')->name('tasks.sync');
+    Route::put('tasks/{task}', '\App\Http\Controllers\TaskController@update')->name('tasks.update'); //should be implemented.
     Route::delete('tasks/{tasks}', '\App\Http\Controllers\TaskController@destroy')->name('tasks.destroy');
 });
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('statuses', '\App\Http\Controllers\StatusController@store')->name('statuses.store');
     Route::put('statuses/sync', '\App\Http\Controllers\StatusController@sync')->name('statuses.sync');
+    Route::put('statuses/{status}', '\App\Http\Controllers\StatusController@update')->name('statuses.update'); //should be implemented.
     Route::delete('statuses/{status}', '\App\Http\Controllers\StatusController@destroy')->name('statuses.destroy');
 });
 

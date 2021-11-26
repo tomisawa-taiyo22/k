@@ -23,4 +23,16 @@ class Status extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * ステータス削除時に、関連タスクを削除する
+     */
+    public static function boot ()
+    {
+        parent::boot ();
+
+        static::deleting(function ($status) {
+            $status->tasks()->delete();
+        });
+    }
+
 }
