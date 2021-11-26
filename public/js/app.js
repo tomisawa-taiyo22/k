@@ -2516,7 +2516,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -7136,7 +7135,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.status-drag[data-v-5ae9562a] {\n    transition: transform 0.5s;\n    transition-property: all;\n}\n.flex[data-v-5ae9562a] {\n    display: -moz-flex;\n    display: -ms-flex;\n    display: -o-flex;\n    display: flex;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.status-drag[data-v-5ae9562a] {\n  transition: transform 0.5s;\n  transition-property: all;\n}\n.flex[data-v-5ae9562a] {\n  display: -moz-flex;\n  display: -ms-flex;\n  display: -o-flex;\n  display: flex;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -57720,7 +57719,7 @@ var render = function () {
                 },
               },
             },
-            [_vm._v("\n                Add Status ＋\n            ")]
+            [_vm._v("\n        Add Status ＋\n      ")]
           ),
           _vm._v(" "),
           _vm.showModal
@@ -57797,9 +57796,9 @@ var render = function () {
                               { staticClass: "font-medium text-white" },
                               [
                                 _vm._v(
-                                  "\n                                " +
+                                  "\n                " +
                                     _vm._s(status.title) +
-                                    "\n                            "
+                                    "\n              "
                                 ),
                               ]
                             ),
@@ -57899,9 +57898,9 @@ var render = function () {
                                               },
                                               [
                                                 _vm._v(
-                                                  "\n                                                " +
+                                                  "\n                        " +
                                                     _vm._s(task.title) +
-                                                    "\n                                            "
+                                                    "\n                      "
                                                 ),
                                               ]
                                             ),
@@ -57936,9 +57935,9 @@ var render = function () {
                                           { staticClass: "text-gray-700" },
                                           [
                                             _vm._v(
-                                              "\n                                            " +
+                                              "\n                      " +
                                                 _vm._s(task.description) +
-                                                "\n                                        "
+                                                "\n                    "
                                             ),
                                           ]
                                         ),
@@ -57988,7 +57987,7 @@ var render = function () {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                    Add Task ＋\n                                "
+                                      "\n                  Add Task ＋\n                "
                                     ),
                                   ]
                                 ),
