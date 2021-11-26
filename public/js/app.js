@@ -2584,7 +2584,7 @@ __webpack_require__.r(__webpack_exports__);
       });
 
       if (confirm('タスクを削除しますか？')) {
-        axios["delete"]("/tasks/" + taskId, taskId).then(function (res) {
+        axios["delete"]("/tasks/" + taskId).then(function (res) {
           _this.statuses[statusIndex].tasks.splice(taskIndex, 1);
         })["catch"](function (err) {
           console.log(err);
@@ -2633,7 +2633,7 @@ __webpack_require__.r(__webpack_exports__);
       });
 
       if (confirm('ステータスを削除しますか？')) {
-        axios["delete"]("/statuses/" + statusId, statusId).then(function (res) {
+        axios["delete"]("/statuses/" + statusId).then(function (res) {
           // 削除が成功した場合、クライアント側も反映させる
           _this2.statuses.splice(statusIndex, 1);
         })["catch"](function (err) {
@@ -7135,7 +7135,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.status-drag[data-v-5ae9562a] {\n  transition: transform 0.5s;\n  transition-property: all;\n}\n.flex[data-v-5ae9562a] {\n  display: -moz-flex;\n  display: -ms-flex;\n  display: -o-flex;\n  display: flex;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.status-drag[data-v-5ae9562a] {\r\n  transition: transform 0.5s;\r\n  transition-property: all;\n}\n.flex[data-v-5ae9562a] {\r\n  display: -moz-flex;\r\n  display: -ms-flex;\r\n  display: -o-flex;\r\n  display: flex;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

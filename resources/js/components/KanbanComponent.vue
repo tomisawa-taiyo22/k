@@ -198,7 +198,7 @@ export default {
       );
       if (confirm('タスクを削除しますか？')) {
         axios
-          .delete("/tasks/" + taskId, taskId)
+          .delete("/tasks/" + taskId)
           .then(res => {
             this.statuses[statusIndex].tasks.splice(taskIndex, 1);
           })
@@ -248,7 +248,7 @@ export default {
 
       if (confirm('ステータスを削除しますか？')) {
         axios
-          .delete("/statuses/" + statusId, statusId)
+          .delete("/statuses/" + statusId)
           .then(res => {
             // 削除が成功した場合、クライアント側も反映させる
             this.statuses.splice(statusIndex, 1);
