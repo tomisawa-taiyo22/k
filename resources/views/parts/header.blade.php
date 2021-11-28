@@ -12,15 +12,22 @@
                     <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('ユーザ登録') }}</a>
                 @endif
             @else
-                <span>{{ Auth::user()->name }}</span>
-
-                <a href="{{ route('logout') }}"
-                class="no-underline hover:underline"
-                onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">{{ __('ログアウト') }}</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                    {{ csrf_field() }}
-                </form>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <span>{{ Auth::user()->name }}</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        class="no-underline hover:underline"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">{{ __('ログアウト') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                        {{ csrf_field() }}
+                    </form>
+                    <a class="dropdown-item" href="{{ url('/tasks') }}">
+                        {{ __('タスクボードへ') }}
+                    </a>
+                </div>
             @endguest
         </nav>
     </div>
