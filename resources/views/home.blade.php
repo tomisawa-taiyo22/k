@@ -18,7 +18,7 @@
 
             <div class="w-full p-6">
                 <p class="text-gray-700">
-                    ログインが完了しました!
+                    正常に処理が実行されました!
                 </p>
             </div>
         </section>

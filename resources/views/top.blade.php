@@ -1,9 +1,9 @@
 @extends('layouts.common')
-@section('title', 'Kanban-Board')
+@section('title', 'Task-Board')
 @section('content')
 <main class='container mx-auto'>
     <div>
-        <h1 class="text-9xl text-green-700 font-semibold">Kanban-Board</h1>
+        <h1 class="text-9xl text-green-700 font-semibold">Task-Board</h1>
     </div>
     <div>
         <button
