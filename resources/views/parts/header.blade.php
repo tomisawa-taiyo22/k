@@ -9,7 +9,7 @@
             @guest
                 <a class="no-underline hover:underline" href="{{ route('login') }}">{{ __('ログイン') }}</a>
                 @if (Route::has('register'))
-                    <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('ユーザ登録') }}</a>
+                    <a class="no-underline hover:underline" href="{{ route('register') }}">{{ __('ユーザー登録') }}</a>
                 @endif
             @else
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
