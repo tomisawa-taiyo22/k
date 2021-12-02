@@ -7,13 +7,13 @@
       <input
         class="block w-full px-2 py-1 text-lg border-b border-blue-800 rounded"
         type="text"
-        placeholder="Enter a title"
+        placeholder="タイトルを入力"
         v-model.trim="newTask.title"
       />
       <textarea
         class="mt-3 p-2 block w-full p-1 border text-sm rounded"
         rows="2"
-        placeholder="Add a description (optional)"
+        placeholder="詳細を入力"
         v-model.trim="newTask.description"
       ></textarea>
       <div v-show="errorMessage">

@@ -7,7 +7,7 @@
                     @submit.prevent="handleAddNewStatus"
                 >
                     <div class="text-center text-gray-500 mb-6">
-                        <h3>Status Add</h3>
+                        <h3>ステータスの追加</h3>
                     </div>
                     <div class="p-3 flex-1">
                         <input
@@ -34,13 +34,13 @@
                             type="reset"
                             class="py-1 leading-5 text-gray-600 hover:text-gray-700"
                         >
-                            cancel
+                            キャンセル
                         </button>
                         <button
                             type="submit"
                             class="px-3 py-1 leading-5 text-white bg-orange-600 hover:bg-orange-500 rounded"
                         >
-                            Add
+                            追加
                         </button>
                     </div>
                 </form>
