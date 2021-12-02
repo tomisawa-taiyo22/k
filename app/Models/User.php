@@ -57,20 +57,10 @@ class User extends Authenticatable
                     'order' => 2
                 ],
                 [
-                    'title' => '進行中',
-                    'slug' => 'progress',
-                    'order' => 3
-                ],
-                [
                     'title' => '完了',
                     'slug' => 'done',
                     'order' => 4
                 ],
-                [
-                    'title' => '保留',
-                    'slug' => 'on_hold',
-                    'order' => 5
-                ]
             ]);
         });
     }
