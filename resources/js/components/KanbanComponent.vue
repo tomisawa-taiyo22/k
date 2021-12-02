@@ -51,16 +51,16 @@
                   </button>
                   <button
                     class="p-1 text-sm text-orange-500 hover:underline"
-                    @click="showDeleteModal = true"
+                    @click="showDeleteStatusModal = true"
                   >
                     <Trash2Icon/>
                   </button>
 
-                  <DeleteModal
-                    v-if="showDeleteModal"
-                    @close="showDeleteModal = false"
+                  <DeleteStatusModal
+                    v-if="showDeleteStatusModal"
+                    @close="showDeleteStatusModal = false"
                     v-on:status-deleted="delStatus(status.id)"
-                    v-on:delete-canceled="closeDeleteModal"
+                    v-on:delete-canceled="closeDeleteStatusModal"
                   />
               </div>
 
@@ -88,25 +88,31 @@
                     <div
                       v-for="task in status.tasks"
                       :key="task.id"
-                      class="mb-3 p-4 flex flex-col bg-white rounded-md shadow transform hover:shadow-md cursor-pointer"
                     >
-                      <div class="flex justify-between">
-                        <span class="block mb-2 text-xl text-gray-900">
-                          {{ task.title }}
-                        </span>
-                        <div>
-                          <button aria-label="Delete task"
-                            class="p-1 focus:outline-none focus:shadow-outline text-red-500 hover:text-red-600"
-                            @click="onDelete(task.id, status.id)"
-                          >
-                            <Trash2Icon/>
-                          </button>
+                      <div class="mb-3 p-4 flex flex-col bg-white rounded-md shadow transform hover:shadow-md cursor-pointer">
+                        <div class="flex justify-between">
+                          <span class="block mb-2 text-xl text-gray-900">
+                            {{ task.title }}
+                          </span>
+                          <div>
+                            <button aria-label="Delete task"
+                              class="p-1 focus:outline-none focus:shadow-outline text-red-500 hover:text-red-600"
+                              @click="showDeleteTaskModal = true"
+                            >
+                              <Trash2Icon/>
+                            </button>
+                          </div>
                         </div>
+                        <p class="text-gray-700">
+                          {{ task.description }}
+                        </p>
                       </div>
-                      <p class="text-gray-700">
-                        {{ task.description }}
-                      </p>
-
+                      <DeleteTaskModal
+                        v-if="showDeleteTaskModal"
+                        @close="showDeleteTaskModal = false"
+                        v-on:task-deleted="onDelete(task.id, status.id)"
+                        v-on:delete-canceled="closeDeleteTaskModal"
+                      />
                     </div>
                   </transition-group>
                 </draggable>
@@ -141,7 +147,8 @@
 import AddTaskForm from "./AddTaskForm";
 import AddStatusModal from "./AddStatusModal";
 import draggable from "vuedraggable";
-import DeleteModal from "./DeleteModal";
+import DeleteStatusModal from "./DeleteStatusModal";
+import DeleteTaskModal from "./DeleteTaskModal"
 import { CreditCardIcon, Trash2Icon, EditIcon } from "vue-feather-icons";
 
 export default {
@@ -152,7 +159,8 @@ export default {
     Trash2Icon,
     AddTaskForm,
     AddStatusModal,
-    DeleteModal
+    DeleteStatusModal,
+    DeleteTaskModal
   },
   props: {
     initialData: Array
@@ -162,7 +170,8 @@ export default {
       statuses: [],
       newTaskForStatus: 0,
       showModal: false,
-      showDeleteModal: false,
+      showDeleteStatusModal: false,
+      showDeleteTaskModal: false,
       maxOrderNo: 0
     };
   },
@@ -199,11 +208,17 @@ export default {
     closeStatusModal() {
       this.showModal = false;
     },
-    openDeleteModal() {
-        this.showDeleteModal = true;
+    openDeleteStatusModal() {
+        this.showDeleteStatusModal = true;
     },
-    closeDeleteModal() {
-        this.showDeleteModal = false;
+    closeDeleteStatusModal() {
+        this.showDeleteStatusModal = false;
+    },
+    openDeleteTaskModal() {
+        this.showDeleteTaskModal = true;
+    },
+    closeDeleteTaskModal() {
+        this.showDeleteTaskModal = false;
     },
     onDelete (taskId, statusId) {
       const statusIndex = this.statuses.findIndex(
@@ -212,16 +227,15 @@ export default {
       const taskIndex = this.statuses[statusIndex].tasks.findIndex(
         id => taskId
       );
-      if (confirm('タスクを削除しますか？')) {
-        axios
-          .delete("/tasks/" + taskId)
-          .then(res => {
-            this.statuses[statusIndex].tasks.splice(taskIndex, 1);
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      }
+      axios
+        .delete("/tasks/" + taskId)
+        .then(res => {
+          this.statuses[statusIndex].tasks.splice(taskIndex, 1);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      this.closeDeleteTaskModal();
     },
     handleStatusAdded (newStatus) {
       newStatus.tasks = []
@@ -270,7 +284,7 @@ export default {
         .catch(err => {
             console.log(err);
         });
-      this.closeDeleteModal();
+      this.closeDeleteStatusModal();
     },
   }
 };
