@@ -50,11 +50,18 @@
                     <CreditCardIcon/>
                   </button>
                   <button
-                    @click="delStatus(status.id)"
                     class="p-1 text-sm text-orange-500 hover:underline"
+                    @click="showDeleteModal = true"
                   >
                     <Trash2Icon/>
                   </button>
+
+                  <DeleteModal
+                    v-if="showDeleteModal"
+                    @close="showDeleteModal = false"
+                    v-on:status-deleted="delStatus(status.id)"
+                    v-on:delete-canceled="closeDeleteModal"
+                  />
               </div>
 
               <div class="p-2 bg-blue-100">
@@ -134,6 +141,7 @@
 import AddTaskForm from "./AddTaskForm";
 import AddStatusModal from "./AddStatusModal";
 import draggable from "vuedraggable";
+import DeleteModal from "./DeleteModal";
 import { CreditCardIcon, Trash2Icon, EditIcon } from "vue-feather-icons";
 
 export default {
@@ -144,6 +152,7 @@ export default {
     Trash2Icon,
     AddTaskForm,
     AddStatusModal,
+    DeleteModal
   },
   props: {
     initialData: Array
@@ -153,6 +162,7 @@ export default {
       statuses: [],
       newTaskForStatus: 0,
       showModal: false,
+      showDeleteModal: false,
       maxOrderNo: 0
     };
   },
@@ -188,6 +198,12 @@ export default {
     },
     closeStatusModal() {
       this.showModal = false;
+    },
+    openDeleteModal() {
+        this.showDeleteModal = true;
+    },
+    closeDeleteModal() {
+        this.showDeleteModal = false;
     },
     onDelete (taskId, statusId) {
       const statusIndex = this.statuses.findIndex(
@@ -244,19 +260,17 @@ export default {
       // タスクを削除する必要があるステータスのインデックスを見つけます
       const statusIndex = this.statuses.findIndex(
         status => status.id === statusId
-      );
-
-      if (confirm('ステータスを削除しますか？')) {
-        axios
-          .delete("/statuses/" + statusId)
-          .then(res => {
-            // 削除が成功した場合、クライアント側も反映させる
-            this.statuses.splice(statusIndex, 1);
-          })
-          .catch(err => {
-              console.log(err);
-          });
-      }
+      );       
+      axios
+        .delete("/statuses/" + statusId)
+        .then(res => {
+          // 削除が成功した場合、クライアント側も反映させる
+          this.statuses.splice(statusIndex, 1);
+        })
+        .catch(err => {
+            console.log(err);
+        });
+      this.closeDeleteModal();
     },
   }
 };
