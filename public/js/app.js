@@ -7232,7 +7232,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.overlay {\n    background: rgba(0, 0, 0, .8);\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 900;\n    transition: all .5s ease;\n}\n.panel {\n    width: 300px;\n    height: 250px;\n    background: #fff;\n    padding: 20px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    margin-left: -150px;\n    margin-top: -100px;\n    transition: all .3s ease;\n}\n.modal-enter, .modal-leave-active {\n    opacity: 0;\n}\n.modal-enter .panel, .modal-leave-active .panel{\n    top: -200px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.overlay {\r\n    background: rgba(0, 0, 0, .8);\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    z-index: 900;\r\n    transition: all .5s ease;\n}\n.panel {\r\n    width: 300px;\r\n    height: 250px;\r\n    background: #fff;\r\n    padding: 20px;\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 50%;\r\n    margin-left: -150px;\r\n    margin-top: -100px;\r\n    transition: all .3s ease;\n}\n.modal-enter, .modal-leave-active {\r\n    opacity: 0;\n}\n.modal-enter .panel, .modal-leave-active .panel{\r\n    top: -200px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7256,7 +7256,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.overlay {\n    background: rgba(0, 0, 0, 0.5);\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 900;\n    transition: all .5s ease;\n}\n.panel {\n    width: 300px;\n    height: 250px;\n    background: #fff;\n    padding: 20px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    margin-left: -150px;\n    margin-top: -100px;\n    transition: all .3s ease;\n}\n.modal-enter, .modal-leave-active {\n    opacity: 0;\n}\n.modal-enter .panel, .modal-leave-active .panel{\n    top: -200px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.overlay {\r\n    background: rgba(0, 0, 0, 0.5);\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    z-index: 900;\r\n    transition: all .5s ease;\n}\n.panel {\r\n    width: 300px;\r\n    height: 250px;\r\n    background: #fff;\r\n    padding: 20px;\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 50%;\r\n    margin-left: -150px;\r\n    margin-top: -100px;\r\n    transition: all .3s ease;\n}\n.modal-enter, .modal-leave-active {\r\n    opacity: 0;\n}\n.modal-enter .panel, .modal-leave-active .panel{\r\n    top: -200px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7280,7 +7280,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.overlay {\n    background: rgba(0, 0, 0, 0.5);\n    position: fixed;\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 900;\n    transition: all .5s ease;\n}\n.panel {\n    width: 300px;\n    height: 250px;\n    background: #fff;\n    padding: 20px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    margin-left: -150px;\n    margin-top: -100px;\n    transition: all .3s ease;\n}\n.modal-enter, .modal-leave-active {\n    opacity: 0;\n}\n.modal-enter .panel, .modal-leave-active .panel{\n    top: -200px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.overlay {\r\n    background: rgba(0, 0, 0, 0.5);\r\n    position: fixed;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    z-index: 900;\r\n    transition: all .5s ease;\n}\n.panel {\r\n    width: 300px;\r\n    height: 250px;\r\n    background: #fff;\r\n    padding: 20px;\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 50%;\r\n    margin-left: -150px;\r\n    margin-top: -100px;\r\n    transition: all .3s ease;\n}\n.modal-enter, .modal-leave-active {\r\n    opacity: 0;\n}\n.modal-enter .panel, .modal-leave-active .panel{\r\n    top: -200px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -57745,7 +57745,7 @@ var render = function () {
               },
               [
                 _c("div", { staticClass: "text-center text-gray-500 mb-6" }, [
-                  _c("h3", [_vm._v("Status Add")]),
+                  _c("h3", [_vm._v("ステータスの追加")]),
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "p-3 flex-1" }, [
@@ -57856,7 +57856,7 @@ var render = function () {
                       },
                       [
                         _vm._v(
-                          "\n                        cancel\n                    "
+                          "\n                        キャンセル\n                    "
                         ),
                       ]
                     ),
@@ -57870,7 +57870,7 @@ var render = function () {
                       },
                       [
                         _vm._v(
-                          "\n                        Add\n                    "
+                          "\n                        追加\n                    "
                         ),
                       ]
                     ),
@@ -57933,7 +57933,7 @@ var render = function () {
           ],
           staticClass:
             "block w-full px-2 py-1 text-lg border-b border-blue-800 rounded",
-          attrs: { type: "text", placeholder: "Enter a title" },
+          attrs: { type: "text", placeholder: "タイトルを入力" },
           domProps: { value: _vm.newTask.title },
           on: {
             input: function ($event) {
@@ -57959,7 +57959,7 @@ var render = function () {
             },
           ],
           staticClass: "mt-3 p-2 block w-full p-1 border text-sm rounded",
-          attrs: { rows: "2", placeholder: "Add a description (optional)" },
+          attrs: { rows: "2", placeholder: "詳細を入力" },
           domProps: { value: _vm.newTask.description },
           on: {
             input: function ($event) {
