@@ -38,7 +38,7 @@
             :key="status.slug"
             class="mr-6 w-4/5 max-w-xs flex-shrink-0"
           >
-            <div class="rounded-md shadow-md overflow-hidden status">
+            <div class="rounded-md shadow-md status">
               <div class="p-3 flex justify-between items-baseline bg-blue-800 ">
                 <h4 class="font-medium text-white">
                   {{ status.title }}

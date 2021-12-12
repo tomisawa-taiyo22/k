@@ -26,7 +26,7 @@ class TaskController extends Controller
 
         return $request->user()
             ->tasks()
-            ->create($request->only('title', 'description', 'status_id'));
+            ->create($request->only('title', 'description', 'deadline', 'status_id'));
     }
 
     public function sync(Request $request)

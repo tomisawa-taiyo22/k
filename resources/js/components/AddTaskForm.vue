@@ -1,6 +1,6 @@
 <template>
   <form
-    class="relative mb-3 flex flex-col justify-between bg-white rounded-md shadow overflow-hidden"
+    class="relative mb-3 flex flex-col justify-between bg-white rounded-md shadow "
     @submit.prevent="handleAddNewTask"
   >
     <div class="p-3 flex-1">
@@ -22,6 +22,15 @@
         </span>
       </div>
     </div>
+    <div class="mt-3 p-2 block w-full p-1 border text-sm rounded" >
+      <Datepicker
+        placeholder="締め切り日を入力"
+        :language="ja"
+        :format="DatePickerFormat"
+        v-model.trim="newTask.deadline"
+      >
+      </Datepicker>
+    </div>
     <div class="p-3 flex justify-between items-end text-sm bg-gray-100">
       <button
         @click="$emit('task-canceled')"
@@ -41,7 +50,13 @@
 </template>
 
 <script>
+import Datepicker from "vuejs-datepicker";
+import {ja} from "vuejs-datepicker/dist/locale";
+
 export default {
+  components: {
+    Datepicker
+  },
   props: {
     statusId: Number
   },
@@ -50,9 +65,12 @@ export default {
       newTask: {
         title: "",
         description: "",
+        deadline: "",
         status_id: null
       },
-      errorMessage: ""
+      errorMessage: "",
+      ja:ja,
+      DatePickerFormat: "yyyy-MM-dd"
     };
   },
   mounted() {
@@ -63,6 +81,9 @@ export default {
       if (!this.newTask.title) {
         this.errorMessage = "The title field is required";
         return;
+      }
+      if (this.newTask.deadline){
+        this.newTask.deadline = this.newTask.deadline.toISOString().substr(0, 10);
       }
 
       axios
