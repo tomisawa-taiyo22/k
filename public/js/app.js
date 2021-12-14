@@ -2647,6 +2647,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -58563,6 +58566,21 @@ var render = function () {
                                               _vm._v(
                                                 "\n                        " +
                                                   _vm._s(task.description) +
+                                                  "\n                      "
+                                              ),
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            {
+                                              staticClass:
+                                                "d-flex justify-content-end text-gray-900",
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                        " +
+                                                  _vm._s(task.deadline) +
                                                   "\n                      "
                                               ),
                                             ]

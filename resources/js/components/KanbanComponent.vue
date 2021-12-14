@@ -106,6 +106,9 @@
                         <p class="text-gray-700">
                           {{ task.description }}
                         </p>
+                        <p class="d-flex justify-content-end text-gray-900">
+                          {{ task.deadline }}
+                        </p>
                       </div>
                       <DeleteTaskModal
                         v-if="showDeleteTaskModal"
